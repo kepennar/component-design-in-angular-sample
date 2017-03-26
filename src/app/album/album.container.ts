@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
-import { AlbumsService, Album } from './api';
+import { AlbumsService, Album } from '../api';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-album-container',
+  template: `
+    <app-album [album]="album | async"></app-album>
+  `,
 })
-export class AppComponent implements OnInit {
-  title = 'Photos album manager';
+export class AlbumContainerComponent implements OnInit {
 
   album: Observable<Album>;
   constructor(private albumsService: AlbumsService) { }
