@@ -12,8 +12,6 @@ export class FilterComponent implements OnInit {
   public filterControl = new FormControl();
   @Output() filter = new EventEmitter();
 
-  constructor() { }
-
   ngOnInit() {
     this.filterControl.valueChanges.debounceTime(400)
     .subscribe(filter => {

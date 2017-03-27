@@ -13,7 +13,7 @@ export class AlbumsService {
 
   constructor(private http: Http) { }
 
-  getAlbums(id = 1): Observable<Album> {
+  getAlbum(id = 1): Observable<Album> {
     const url = albumsUrl.replace(/:albumId/, id.toString());
     return this.http.get(url)
     .map(resp => resp.json());
