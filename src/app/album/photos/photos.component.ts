@@ -10,3 +10,4 @@ import { Photo } from '../../api';
 export class PhotosComponent {
   @Input() photos: Photo[];
 }
+

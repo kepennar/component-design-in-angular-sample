@@ -19,9 +19,9 @@ export class AlbumsService {
     .map(resp => resp.json());
   }
 
-  getAlbumPhotos(albumId: number, _start= 0, _limit= 10): Observable<Photo[]> {
+  getAlbumPhotos(albumId: number, q?: string, _start= 0, _limit= 10): Observable<Photo[]> {
     const url = photosUrl.replace(/:photoId/, '');
-    return this.http.get(url, {search: {albumId, _start, _limit}})
+    return this.http.get(url, {search: {albumId, _start, _limit, q}})
     .map(resp => resp.json());
   }
 
